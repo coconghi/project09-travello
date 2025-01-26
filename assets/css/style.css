@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Volkhov:wght@700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --bgc: #fff;
+  --text-color: #212832;
+  --feature-color-1: #df6951;
+  --feature-color-2: #fff1da;
+}
+
+html {
+  font-size: 62.5%;
+  background-color: var(--bgc);
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+}
+
+/* ================================= Common ================================= */
+.container {
+  width: 1140px;
+  max-width: calc(100% - 140px);
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.heading {
+  font-family: "Volkhov", serif;
+  font-weight: 700;
+}
+
+/* ================================= Header ================================= */
+header{
+position: sticky;
+top: -30px;
+}
+
+.header__container {
+  padding: 45px 0px 15px;
+  display: flex;
+  align-items: center;
+}
+
+/* logo */
+.header__logo {
+  height: 100%;
+  object-fit: cover;
+}
+
+.header__logo rect {
+  color: var(--feature-color-2);
+}
+
+.header__logo rect:nth-of-type(1) {
+  --move: -10%;
+  animation: logo_movement_rect 2s 0.5s ease-in-out infinite;
+}
+.header__logo rect:nth-of-type(2) {
+  --move: -10%;
+  animation: logo_movement_rect 2s 1s ease-in-out infinite;
+}
+
+.header__logo rect:nth-of-type(3) {
+  --move: 10%;
+  animation: logo_movement_rect 2s ease-in-out infinite;
+}
+
+@keyframes logo_movement_rect {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(var(--move));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.header__logo path {
+  color: #000;
+}
+
+.header__logo path:nth-of-type(1) {
+  --jump: -10%;
+  animation: logo_movement_path 1s ease-in-out infinite;
+}
+
+.header__logo path:nth-of-type(2) {
+  --jump: -10%;
+  animation: logo_movement_path 1s 0.5s ease-in-out infinite;
+}
+.header__logo path:nth-of-type(3) {
+  --jump: -10%;
+  animation: logo_movement_path 1s 0.7s ease-in-out infinite;
+}
+.header__logo path:nth-of-type(4) {
+  --jump: -10%;
+  animation: logo_movement_path 1s 0.2s ease-in-out infinite;
+}
+.header__logo path:nth-of-type(5) {
+  --jump: -10%;
+  animation: logo_movement_path 1s 0.6s ease-in-out infinite;
+}
+.header__logo path:nth-of-type(6) {
+  --jump: -10%;
+  animation: logo_movement_path 1s 0.4s ease-in-out infinite;
+}
+.header__logo path:nth-of-type(7) {
+  --jump: -10%;
+  animation: logo_movement_path 1s 0.1s ease-in-out infinite;
+}
+.header__logo path:nth-of-type(8) {
+  --jump: -10%;
+  animation: logo_movement_path 1s 0.3s ease-in-out infinite;
+}
+
+@keyframes logo_movement_path {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateY(var(--jump));
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* navbar */
+.header__navbar {
+  margin-left: auto;
+}
+
+.navbar__list {
+  font-size: 1.0625em;
+  color: var(--text-color);
+  display: flex;
+  column-gap: 30px;
+}
+
+.navbar__item a {
+  padding: 15px;
+}
+
+.navbar__item:hover,
+.header__action--login:hover,
+.header__action--language:hover div {
+  text-shadow: 0.7px 0 0 var(--text-color);
+}
+
+.navbar__item {
+  position: relative;
+}
+
+.navbar__item::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -10px;
+  right: 30%;
+  width: 0;
+  height: 2px;
+  background-color: var(--feature-color-1);
+  transition: 0.3s ease-in-out;
+}
+
+.navbar__item:hover::after {
+  right: auto;
+  left: 30%;
+  width: 40%;
+}
+
+.header__action {
+  color: var(--text-color);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+}
+
+.header__action--login {
+  margin-left: 65px;
+  padding: 15px;
+}
+
+.signup-btn {
+  width: 102px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid var(--text-color);
+}
+
+.signup-btn:hover {
+  background: linear-gradient(180deg, #ff946d 0%, #ff7d68 100%);
+  color: var(--bgc);
+  text-shadow: 0.5px 0 0 var(--bgc);
+  border: transparent;
+}
+
+.header__action--language {
+  font: inherit;
+  padding: 15px;
+  display: flex;
+  column-gap: 6.5px;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================================= Header ================================= */
