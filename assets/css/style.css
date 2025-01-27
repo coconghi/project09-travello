@@ -19,9 +19,10 @@ html {
 }
 
 body {
-  font-size: 1.6rem;
+  font-size: min(1.6rem, 1vw);
   font-family: "Poppins", sans-serif;
   font-weight: 400;
+  position: relative;
 }
 
 /* ================================= Common ================================= */
@@ -47,7 +48,7 @@ img {
 
 .heading {
   font-family: "Volkhov", serif;
-  font-size: 50px;
+  font-size: 3.125em;
   font-weight: 700;
   color: var(--heading-color);
   text-align: center;
@@ -58,7 +59,7 @@ img {
   color: var(--subheading-color);
   text-align: center;
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 1.125em;
   font-weight: 600;
 }
 
@@ -119,6 +120,7 @@ header {
   top: -30px;
   z-index: 10;
   background-color: var(--bgc);
+  overflow: hidden;
 }
 
 .header__container {
@@ -277,6 +279,22 @@ header {
   margin-top: calc(-6vh - 6.098vh - 15px);
   padding: calc(6vh + 6.098vh + 15px);
 }
+
+.hero::after,
+header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 80vh;
+  width: 30vw;
+  background-image: url(../img/hero_decor_1.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: left;
+  z-index: -100;
+}
+
 .hero__container {
   display: flex;
   align-items: center;
@@ -289,16 +307,16 @@ header {
 }
 
 .hero__subheading {
-  margin-bottom: 24px;
+  margin-bottom: 1em;
   color: var(--feature-color-1);
   text-align: left;
-  font-size: 20px;
+  font-size: 1.25em;
   font-weight: 700;
 }
 
 .hero__heading {
-  margin-bottom: 30px;
-  font-size: 84px;
+  margin-bottom: 0.3em;
+  font-size: min(84px, 5.25em);
   font-weight: 700;
   line-height: 105.952%;
   text-align: left;
@@ -330,42 +348,43 @@ header {
 }
 
 .hero__desc {
-  margin-bottom: 34px;
+  margin-bottom: 2.3em;
   width: 66%;
 }
 
 .hero__action {
   display: flex;
-  column-gap: 47px;
+  column-gap: 8%;
   align-items: center;
 }
 
 .hero__btn {
-  width: 170px;
-  line-height: 60px;
+  padding: 0 2em;
+  line-height: 4em;
   border-radius: 10px;
   background: #f2994a;
   box-shadow: 0px 20px 35px 0px rgba(241, 165, 1, 0.15);
   color: #fff;
   text-align: center;
-  font-size: 18px;
+  font-size: 1.125em;
   font-weight: 500;
 }
 
 .hero__watch {
   display: flex;
   align-items: center;
-  column-gap: 21px;
+  column-gap: 1.5em;
   cursor: pointer;
 }
 
 .hero__watch--btn {
   padding-left: 7%;
   padding-top: 3%;
-  width: 52px;
-  height: 52px;
+  width: 4em;
+  height: 4em;
+  font-size: 1.125em;
   border: none;
-  border-radius: 52px;
+  border-radius: 50%;
   background: var(--feature-color-1);
   box-shadow: 0px 15px 30px 0px rgba(223, 105, 81, 0.3);
 }
@@ -379,7 +398,7 @@ header {
 
 .hero__watch--content {
   color: var(--subheading-color);
-  font-size: 17px;
+  font-size: 1.0625em;
   user-select: none;
 }
 
@@ -390,6 +409,7 @@ header {
 
 .hero__media img:first-child {
   float: right;
+  height: 84vh;
 }
 
 .hero__media img:nth-child(2),
