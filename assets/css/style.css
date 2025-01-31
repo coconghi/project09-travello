@@ -28,7 +28,6 @@ body {
 /* ================================= Common ================================= */
 .container {
   width: 80vw;
-  padding: 6vh 0px 15px;
   margin: 0 auto;
 }
 
@@ -114,6 +113,7 @@ img {
     opacity: 0;
   }
 }
+
 /* ================================= Header ================================= */
 header {
   position: sticky;
@@ -124,6 +124,7 @@ header {
 }
 
 .header__container {
+  padding: 6vh 0px 15px;
   display: flex;
   align-items: center;
 }
@@ -373,20 +374,24 @@ header::after {
 .hero__watch {
   display: flex;
   align-items: center;
-  column-gap: 1.5em;
+  column-gap: 1.2em;
   cursor: pointer;
 }
 
 .hero__watch--btn {
   padding-left: 7%;
   padding-top: 3%;
-  width: 4em;
-  height: 4em;
+  width: 3.2em;
+  height: 3.2em;
   font-size: 1.125em;
   border: none;
   border-radius: 50%;
   background: var(--feature-color-1);
   box-shadow: 0px 15px 30px 0px rgba(223, 105, 81, 0.3);
+}
+
+.hero__watch--btn img {
+  width: 35%;
 }
 
 .hero__watch:hover .hero__watch--btn,
@@ -410,10 +415,13 @@ header::after {
 .hero__media img:first-child {
   float: right;
   height: 84vh;
+  width: 120%;
+  object-fit: contain;
 }
 
 .hero__media img:nth-child(2),
 .hero__media img:nth-child(3) {
+  width: 21%;
   position: absolute;
   z-index: -1;
   animation: plane_flying 4s infinite;
@@ -424,3 +432,106 @@ header::after {
   top: 20%;
   animation: plane_flying 5s infinite;
 }
+
+/* ================================= Service ================================= */
+.service {
+  margin-top: 11.5vh;
+  margin-bottom: 15vh;
+}
+
+.service__subheading {
+  margin-bottom: 0.8em;
+}
+
+.service__heading {
+  margin-bottom: 7vh;
+}
+
+.service__list {
+  display: flex;
+  justify-content: space-evenly;
+  column-gap: 2vw;
+}
+
+.service__item {
+  padding: 2.777vw;
+  width: 18.5vw;
+  height: fit-content;
+  border-radius: 36px;
+  background-color: var(--bgc);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.service__item:hover {
+  box-shadow: 0px 100px 80px 0px rgba(0, 0, 0, 0.02),
+    0px 64.815px 46.852px 0px rgba(0, 0, 0, 0.02),
+    0px 38.519px 25.481px 0px rgba(0, 0, 0, 0.01),
+    0px 20px 13px 0px rgba(0, 0, 0, 0.01),
+    0px 8.148px 6.519px 0px rgba(0, 0, 0, 0.01),
+    0px 1.852px 3.148px 0px rgba(0, 0, 0, 0);
+}
+
+.service__item:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: translate(-30%, 30%);
+  z-index: -2;
+  width: 5vw;
+  height: 5vw;
+  border-radius: 30% 0 10% 0;
+  background: #df6951;
+}
+
+.service__item * {
+  text-align: center;
+}
+
+.service__item--icon {
+  margin-bottom: 2.2em;
+  height: 5.5em;
+  object-fit: contain;
+}
+
+.service__item--heading {
+  margin-bottom: 0.8em;
+  font-size: 1.25em;
+  color: var(--heading-color);
+  font-weight: 600;
+}
+
+/* service decoration */
+.service__container {
+  position: relative;
+}
+
+.service__decoration {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(50%);
+  user-select: none;
+}
+
+.service__decoration--column {
+  color: #e5e5e5;
+  font-size: 1.2em;
+  display: flex;
+  justify-content: right;
+  gap: 0.8em;
+  margin-bottom: 0.7em;
+}
+
+.service__decoration--column span:nth-of-type(2n):hover {
+  color: #f2c94c;
+}
+.service__decoration--column span:nth-of-type(2n + 1):hover {
+  color: #6246e5;
+}
+
+/* ================================= Destination ================================= */
+
